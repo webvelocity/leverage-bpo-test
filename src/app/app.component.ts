@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {DataService} from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'newsletter-signup';
+
+
+constructor( private data: DataService) {
+    this.data.getNewsletter().subscribe(
+      (data) => {
+        console.log(data);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+}
 }
