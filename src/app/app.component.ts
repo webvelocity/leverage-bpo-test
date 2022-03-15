@@ -9,15 +9,4 @@ import {DataService} from 'src/app/services/data.service';
 export class AppComponent {
   title = 'newsletter-signup';
 
-
-constructor( private data: DataService) {
-    this.data.getNewsletter().subscribe(
-      (data) => {
-        console.log(data);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-}
 }

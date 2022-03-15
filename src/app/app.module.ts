@@ -5,10 +5,16 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NewsletterSubscriptionListComponent } from './pages/newsletter-subscription-list/newsletter-subscription-list.component';
+import { NewsletterSubscriptionAddUserComponent } from './pages/newsletter-subscription-add-user/newsletter-subscription-add-user.component';
+import { ListSubscribersComponent } from './components/list-subscribers/list-subscribers.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NewsletterSubscriptionListComponent,
+    NewsletterSubscriptionAddUserComponent,
+    ListSubscribersComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,25 @@
+<ng-container *ngIf="subscribers$ | async as data; else loadingOrError">
+  <div>
+    <ul>
+      <li *ngFor="let x of data; let i = index">
+        {{ i + 1 }} . {{ x.name | titlecase }}
+      </li>
+    </ul>
+  </div>
+</ng-container>
+
+<ng-template #loadingOrError>
+  <ng-container *ngIf="errorObject; else loading">
+    <div class="col-12 text-center">
+      <div class="alert alert-danger">
+        {{ errorObject.message }}
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #loading>
+    <div class="col-12 text-center">
+      Loading ...
+    </div>
+  </ng-template>
+</ng-template>
