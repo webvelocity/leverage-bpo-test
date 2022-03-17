@@ -1,6 +1,12 @@
 export interface User {
-  id?: string;
+  id: string;
   name: string;
   email: string;
-  created_on?: Date;
+  created_on: Date;
 }
+
+export interface UserCreate {
+  name: string;
+  email: string;
+}
+

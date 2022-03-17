@@ -2,7 +2,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Injectable } from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {environment} from 'src/environments/environment.prod';
-import { User } from 'src/interfaces/User.model';
+import { User, UserCreate } from 'src/interfaces/User.model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,12 +24,12 @@ export class DataService {
     return this.http.get<User[]>(`${environment.PROD_URL}/newsletter`, {headers: this.headers});
   }
 
-  createSubscriber(name: string, email: string): Observable<User> {
+  createSubscriber(name: string, email: string): Observable<UserCreate> {
     return this.http.post<User>(`${environment.PROD_URL}/newsletter`, {name, email}, {headers: this.headers});
   }
 
   deleteSubscriber(id: string) {
-    return this.http.delete(`${environment.PROD_URL}/newletter/${id}`, {headers: this.headers});
+    return this.http.delete(`${environment.PROD_URL}/newsletter/${id}`, {headers: this.headers});
   }
 
 }
